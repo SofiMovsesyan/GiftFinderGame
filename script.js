@@ -1,5 +1,12 @@
 let boxContainer = document.getElementById("boxContainer")
 let boxes, box;
+let giftDiv = document.createElement("div")
+giftDiv.className = "giftDiv"
+let giftImg = document.createElement("img")
+giftImg.src = "img/gift.png"
+giftDiv.appendChild(giftImg) 
+
+
 function createBoxes() {
     for (let i = 1; i <= 3; i++) {
         boxes = document.createElement("div")
@@ -18,4 +25,18 @@ function createBoxes() {
     }
 }
 
+function randomBox() {
+    let num = Math.floor(Math.random()*9)
+    let box = document.querySelectorAll(".box")
+    box.forEach(box => {
+        if (box.id == `box${num}`) {
+            box.appendChild(giftDiv)
+        }
+    })
+}
+
 createBoxes()
+randomBox()
+
+
+

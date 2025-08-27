@@ -28,16 +28,18 @@ h1 {
 .box {
     width: 100px;
     height: 100px;
-    background-color: rgb(52, 135, 255);
-    border: 1px solid rgb(1, 1, 65);
+    background-image: url("img/question.png");
+    background-size: contain;
     margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* img {
-    width: 23px;
-    height: 23px;
-    margin: 2px;
-} */
+img {
+    width: 75px;
+    height: 75px;
+}
 
 /* .container2 {
     display: flex;
