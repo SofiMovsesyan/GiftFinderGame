@@ -1,5 +1,5 @@
 let boxContainer = document.getElementById("boxContainer")
-let boxes, box;
+let boxes, box, num;
 let giftDiv = document.createElement("div")
 giftDiv.className = "giftDiv"
 let giftImg = document.createElement("img")
@@ -26,17 +26,29 @@ function createBoxes() {
 }
 
 function randomBox() {
-    let num = Math.floor(Math.random()*9)
+    num = Math.floor(Math.random()*9)
     let box = document.querySelectorAll(".box")
     box.forEach(box => {
         if (box.id == `box${num}`) {
+            giftDiv.style.opacity = 0
             box.appendChild(giftDiv)
         }
     })
 }
 
+function boxSelect() {
+    let box = document.querySelectorAll(".box")
+    box.forEach(box => {
+        box.addEventListener("click", ()=>{
+            if (box.id == `box${num}`) {
+                giftDiv.style.opacity = 1
+            }
+            box.style.background = "none"
+        })
+    })
+}
+
 createBoxes()
 randomBox()
-
-
+boxSelect()
 
